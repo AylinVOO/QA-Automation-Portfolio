@@ -2,7 +2,7 @@ describe('Security: Access Control Testing', () => {
   
   it('Exposes the hidden Score Board directory to unauthenticated users', () => {
     // Navigate straight to the scoreboard to check for unauthorized access
-    cy.visit('https://juice-shop.herokuapp.com/#/score-board')
+    cy.visit('/#/score-board')
 
     // Close pop-ups if they appear so they don't block the test
     cy.get('body').then(($body) => {

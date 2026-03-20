@@ -2,7 +2,10 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: 'https://demo.owasp-juice.shop', 
+    baseUrl: 'https://demo.owasp-juice.shop',
+    // Disabling web security to allow Cypress to simulate XSS attacks 
+    // and bypass cross-origin restrictions on the demo site.
+    chromeWebSecurity: false,
     
     // Personal Note: I chose to keep .cy.js files in the root for 
     // better visibility in this specific security portfolio.

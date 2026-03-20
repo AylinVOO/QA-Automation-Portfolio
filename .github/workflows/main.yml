@@ -26,32 +26,4 @@ jobs:
         with:
           browser: chrome
           # Security script
-          name: End-to-End Security Suite
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-jobs:
-  automation-suite:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository 📂
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js Environment ⚙️
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18' # Project requirement
-
-      - name: Install Dependencies 📦
-        run: npm install
-
-      - name: Execute Cypress Security Tests 🧪
-        uses: cypress-io/github-action@v6
-        with:
-          browser: chrome
-          # Security script
           spec: ./*.cy.js

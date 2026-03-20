@@ -8,7 +8,7 @@ describe('Juice Shop API Testing Suite', () => {
   it('TC01 - User Registration', () => {
     cy.request({
       method: 'POST',
-      url: 'https://juice-shop.herokuapp.com/api/Users/',
+      url: '/api/Users/',
       body: {
         "email": uniqueEmail,
         "password": password,
@@ -26,7 +26,7 @@ describe('Juice Shop API Testing Suite', () => {
   it('TC02 - Authentication', () => {
     cy.request({
       method: 'POST',
-      url: 'https://juice-shop.herokuapp.com/rest/user/login',
+      url: '/rest/user/login',
       body: { 
         "email": uniqueEmail, 
         "password": password 
@@ -42,7 +42,7 @@ describe('Juice Shop API Testing Suite', () => {
   it('TC03 - Authenticated Search', () => {
     cy.request({
       method: 'GET',
-      url: 'https://juice-shop.herokuapp.com/rest/products/search?q=apple',
+      url: '/rest/products/search?q=apple',
       headers: { 
         // Provide Bearer token in headers to simulate authorized session
         'Authorization': `Bearer ${authToken}` 

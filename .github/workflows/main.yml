@@ -20,10 +20,12 @@ jobs:
 
       - name: Install Dependencies 📦
         run: npm install
-
+        
       - name: Execute Cypress Security Tests 🧪
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
-          # Security script
+          # Project is in the root
+          project: ./ 
+          # This tells it exactly which files to run in the root
           spec: ./*.cy.js

@@ -16,9 +16,13 @@ module.exports = defineConfig({
     supportFile: false,
     // Resilience: Handling Heroku's 503 "cold starts"
     retries: {
-      runMode: 2,
+      runMode: 3,
       openMode: 0
     },
+    
+    // Giving the server more time to "wake up" and respond
+    defaultCommandTimeout: 15000, // Wait 15s for elements to appear
+    pageLoadTimeout: 120000,      // Wait up to 2 minutes for the initial load
 
     // Automation Strategy:
     // Capturing failure states for remote debugging, but 

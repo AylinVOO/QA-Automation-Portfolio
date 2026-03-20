@@ -2,7 +2,7 @@ describe('Security Automation: XSS Attack', () => {
   it('detects reflected XSS in the search bar', () => {
     
     // 1. Visit the target application
-    cy.visit('https://juice-shop.herokuapp.com/#/')
+    cy.visit('/')
 
     // 2. Clear UI obstacles (Welcome Banner & Cookies)
     cy.get('[aria-label="Close Welcome Banner"]').click()

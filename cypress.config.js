@@ -11,6 +11,11 @@ module.exports = defineConfig({
     // Framework Optimization: 
     // Keeping it lightweight by removing the default support folder.
     supportFile: false,
+    // Resilience: Handling Heroku's 503 "cold starts"
+    retries: {
+      runMode: 2,
+      openMode: 0
+    },
 
     // Automation Strategy:
     // Capturing failure states for remote debugging, but 

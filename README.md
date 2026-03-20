@@ -1,3 +1,5 @@
+![End-to-End Security Suite](https://github.com/AylinVOO/QA-Automation-Portfolio/actions/workflows/main.yml/badge.svg)
+
 # 🛡️ OWASP Juice Shop: Security Automation Suite
 
 I built this automated suite to test the **OWASP Juice Shop** for common vulnerabilities. It uses Cypress for E2E testing and Jira to manage the bug-tracking process.
@@ -12,9 +14,10 @@ I built this automated suite to test the **OWASP Juice Shop** for common vulnera
 3. Launch Cypress: `npx cypress open`
 
 ## 📂 Project Structure
-* `cypress/e2e/sec_juice_shop_xss.cy.js`: Automated XSS security test script.
-* `cypress/e2e/sec_juice_shop_access.cy.js`: Automated Access Control vulnerability test.
-* `cypress/e2e/sec_juice_shop_api.cy.js`: Automated API suite for Registration and JWT Authentication.
+* `sec_juice_shop_xss.cy.js`: Automated XSS security test script.
+* `sec_juice_shop_access.cy.js`: Automated Access Control vulnerability test.
+* `sec_juice_shop_api.cy.js`: Automated API suite for Registration and JWT Authentication.
+* `.github/workflows/main.yml`: CI/CD pipeline configuration (GitHub Actions).
 * `jira/`: Documentation of bug reports and workflow tracking.
 
 ---
@@ -70,5 +73,12 @@ After securing the UI, I moved to the API layer to test authentication and data 
   
 ---
 
+## ⚙️ CI/CD Pipeline Implementation
+To ensure the suite remains reliable in a cloud environment, I optimized the GitHub Actions workflow to handle real-world hurdles:
+
+* **Automated Retries:** I added a retry strategy to bypass `503 Service Unavailable` errors when the demo site is "waking up."
+* **Headless Execution:** I switched to **Chrome Headless** to keep the pipeline fast, cutting total execution time to just **10 seconds**.
+* **Security Bypass:** I explicitly configured `chromeWebSecurity: false` so Cypress could perform **XSS injections** without being blocked by the browser.
+
 ## 🛠️ Tech Stack
-**JavaScript | Cypress | Jira | Git | OWASP**
+**JavaScript | Cypress | GitHub Actions | Jira | OWASP**

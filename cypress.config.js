@@ -2,7 +2,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: 'https://juice-shop.herokuapp.com', 
+    baseUrl: 'https://demo.owasp-juice.shop', 
     
     // Personal Note: I chose to keep .cy.js files in the root for 
     // better visibility in this specific security portfolio.

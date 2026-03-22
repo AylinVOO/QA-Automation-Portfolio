@@ -77,6 +77,8 @@ After securing the UI, I moved to the API layer to test authentication and data 
 To ensure the suite remains reliable in a cloud environment, I optimized the GitHub Actions workflow to handle real-world hurdles:
 
 * **Automated Retries:** I added a retry strategy to bypass `503 Service Unavailable` errors when the demo site is "waking up."
+* **Environment Health Checks:** I implemented a **scheduled hourly trigger** to automatically validate the demo site's status and keep the project badge current.
+* **Latency Mitigation:** I adjusted the `pageLoadTimeout` to **120s** and command timeouts to **15s** to handle the public server's "cold starts."
 * **Headless Execution:** I switched to **Chrome Headless** to keep the pipeline fast, cutting total execution time to just **10 seconds**.
 * **Security Bypass:** I explicitly configured `chromeWebSecurity: false` so Cypress could perform **XSS injections** without being blocked by the browser.
 
